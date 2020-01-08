@@ -1,8 +1,22 @@
 from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.db import models
 # Create your models here.
+
+def validate_phone(value):
+    import re
+    '''
+    Номер телефона должен быть:
+    ^\d{6}$ - только цифры 6 знаков для городских номеров
+    ^[9]\d{9}$ - 10 цифр начинается на девятку
+    ^[7-8][9]\d{9}$ - 11 цифр начинается на 7 или 8 потом 9 и еще 9 знаков
+    ^\+[7][9]\d{9}$ - 12 знаков в федеральном формате на +7 
+    '''
+    reg = re.compile('^\d{6}$|^[9]\d{9}$|^[7-8][9]\d{9}$|^\+[7][9]\d{9}$')
+    if not reg.match(value):
+        raise ValidationError(_(u'%s hashtag doesnot comply' % value))
 
 
 class MyUserManager(BaseUserManager):
@@ -38,6 +52,8 @@ class MyUserManager(BaseUserManager):
 
 
 class MyUser(AbstractBaseUser):
+
+
     login_name = models.CharField(
         verbose_name=_('user login'),
         max_length=32,
@@ -57,8 +73,9 @@ class MyUser(AbstractBaseUser):
     )
     phone = models.CharField(
         verbose_name=_('Phone Number'),
-        max_length=10,
-        unique=True
+        max_length=12,
+        unique=True,
+        validators=[validate_phone]
     )
     email = models.EmailField(
         verbose_name=_('email address'),
@@ -123,3 +140,26 @@ class MyUser(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+    def save(self, *args, **kwargs):
+        if len(self.phone) == 6:
+            self.phone = '+73822' + self.phone
+        elif len(self.phone) == 10:
+            self.phone = '+7' + self.phone
+        elif len(self.phone) == 11:
+            if self.phone[0] == '7' or self.phone[0] == '8':
+               self.phone = '+7' + self.phone[1:]
+        '''    else:
+                raise ValueError(_('Phone number should start 7 or 8'))
+        elif len(self.phone) == 12:
+            if self.phone[0:2] != '+7':
+                raise ValueError(_('Phone number should start +7 or +8'))
+        else:
+            raise ValueError(_('Phone number format is not valid')) '''
+        super(MyUser, self).save(*args, **kwargs)
+
+
+
+    class Meta:
+        verbose_name = _(u'User')
+        verbose_name_plural = _(u'Users')

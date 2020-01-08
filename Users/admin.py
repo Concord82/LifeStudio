@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-
+from django.utils.translation import ugettext_lazy as _
 # Register your models here.
 from .models import MyUser
 
@@ -23,7 +23,7 @@ class UserCreationForm(forms.ModelForm):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
         if password1 and password2 and password1 != password2:
-            raise forms.ValidationError("Passwords don't match")
+            raise forms.ValidationError(_("Passwords don't match"))
         return password2
 
     def save(self, commit=True):
@@ -34,12 +34,16 @@ class UserCreationForm(forms.ModelForm):
             user.save()
         return user
 
+
 class UserChangeForm(forms.ModelForm):
     """A form for updating users. Includes all the fields on
     the user, but replaces the password field with admin's
     password hash display field.
     """
-    password = ReadOnlyPasswordHashField()
+    password = ReadOnlyPasswordHashField(label= (_("Password")),
+        help_text= (_("Raw passwords are not stored, so there is no way to see "
+                    "this user's password, but you can change the password "
+                    "using <a href=\"../password/\">this form</a>.")))
 
     class Meta:
         model = MyUser
@@ -62,7 +66,7 @@ class UserChangeForm(forms.ModelForm):
 
 
 class UserAdmin(BaseUserAdmin):
-     # The forms to add and change user instances
+    # The forms to add and change user instances
     form = UserChangeForm
     add_form = UserCreationForm
 
@@ -70,9 +74,19 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ('is_admin',)
     fieldsets = (
         (None, {'fields': ('login_name', 'password')}),
-        ('Personal info', {'fields': ('email', 'last_name', 'first_name', 'middle_name',)}),
-        ('Permissions', {'fields': ('is_admin',)}),
+        (_('Personal info'), {'fields':
+                               ('last_name',
+                                'first_name',
+                                'middle_name',
+                                'phone',
+                                'email',
+                                'address',
+                                'birthDay',
+                                )
+                           }),
+        (_('Permissions'), {'fields': ('is_admin','is_active','creationData',)}),
     )
+    readonly_fields = ['creationData',]
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (

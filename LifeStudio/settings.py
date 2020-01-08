@@ -107,6 +107,10 @@ AUTH_USER_MODEL = 'Users.MyUser'
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
+LANGUAGES = (
+  ('ru', 'Russian'),
+  ('en', 'English'),
+)
 
 TIME_ZONE = 'Asia/Tomsk'
 
