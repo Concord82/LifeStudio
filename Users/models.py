@@ -75,6 +75,16 @@ class MyUser(AbstractBaseUser):
         blank=True,
         null=True
     )
+    creationData = models.DateTimeField(
+        verbose_name=_('Registration Data'),
+        auto_now_add=True
+    )
+    photo = models.ImageField(
+        verbose_name=_('Photo'),
+        upload_to='uploads/%Y/%m/%d/',
+
+
+    )
 
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
