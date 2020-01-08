@@ -91,3 +91,40 @@ class WorkType(models.Model):
     class Meta:
         verbose_name = _(u'Work Type')
         verbose_name_plural = _(u'Works Type')
+
+UnitList = (
+    ('1', 'кв.м.'),
+    ('2', 'шт.'),
+)
+
+class WorksList(models.Model):
+    name = models.CharField(
+        max_length=32,
+        verbose_name=_('Work Name')
+    )
+    workType = models.ForeignKey(
+        to=WorkType,
+        on_delete=models.CASCADE,
+    )
+    unit = models.CharField(
+        verbose_name=_('unit'),
+        max_length=10,
+        choices=UnitList
+    )
+    price = models.DecimalField(
+        verbose_name=_('Price'),
+        max_digits=10,
+        decimal_places=2
+    )
+    master_percent = models.PositiveSmallIntegerField(
+        verbose_name=_('master Percent'),
+    )
+    admin_percent = models.PositiveSmallIntegerField(
+        verbose_name=_('Admin Percent'),
+    )
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _(u'Work')
+        verbose_name_plural = _(u'Works List')
