@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:58+0700\n"
+"POT-Creation-Date: 2020-01-08 19:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,54 +46,59 @@ msgstr "Персональная информация"
 msgid "Permissions"
 msgstr "Права доступа"
 
-#: Users/models.py:15
-msgid "Users must have an login"
-msgstr ""
+#: Users/models.py:19
+#, python-format
+msgid "%s hashtag doesnot comply"
+msgstr "%s имеет неправильный формат"
 
-#: Users/models.py:42
+#: Users/models.py:29
+msgid "Users must have an login"
+msgstr "Не задан логин пользователя"
+
+#: Users/models.py:58
 msgid "user login"
 msgstr "Логин"
 
-#: Users/models.py:47
+#: Users/models.py:63
 msgid "First Name User"
 msgstr "Имя"
 
-#: Users/models.py:51
+#: Users/models.py:67
 msgid "Last Name User"
 msgstr "Фамилия"
 
-#: Users/models.py:55
+#: Users/models.py:71
 msgid "Middle Name User"
 msgstr "Отчество"
 
-#: Users/models.py:59
+#: Users/models.py:75
 msgid "Phone Number"
 msgstr "Телефон"
 
-#: Users/models.py:64
+#: Users/models.py:81
 msgid "email address"
 msgstr "E-Mail"
 
-#: Users/models.py:69
+#: Users/models.py:86
 msgid "Address"
 msgstr "Адрес"
 
-#: Users/models.py:74
+#: Users/models.py:91
 msgid "User BirthDay"
 msgstr "День рождения"
 
-#: Users/models.py:79
+#: Users/models.py:96
 msgid "Registration Data"
 msgstr "Дата регистрации"
 
-#: Users/models.py:83
+#: Users/models.py:100
 msgid "Photo"
 msgstr "Фото"
 
-#: Users/models.py:127
+#: Users/models.py:164
 msgid "User"
 msgstr "Пользователь"
 
-#: Users/models.py:128
+#: Users/models.py:165
 msgid "Users"
 msgstr "Пользователи"
