@@ -72,9 +72,9 @@ class MyUser(AbstractBaseUser):
     )
     birthDay = models.DateField(
         verbose_name=_('User BirthDay'),
-        blank=True
+        blank=True,
+        null=True
     )
-
 
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
