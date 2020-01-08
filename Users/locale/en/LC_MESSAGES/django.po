@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:45+0700\n"
+"POT-Creation-Date: 2020-01-08 22:19+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: Users/models.py:15
+
+#: Users/admin.py:26
+msgid "Passwords don't match"
+msgstr ""
+
+#: Users/admin.py:43
+msgid "Password"
+msgstr ""
+
+#: Users/admin.py:44
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"../password/"
+"\">this form</a>."
+msgstr ""
+
+#: Users/admin.py:77
+msgid "Personal info"
+msgstr ""
+
+#: Users/admin.py:87
+msgid "Permissions"
+msgstr ""
+
+#: Users/models.py:19
+#, python-format
+msgid "%s hashtag doesnot comply"
+msgstr ""
+
+#: Users/models.py:29
 msgid "Users must have an login"
 msgstr ""
 
-#: Users/models.py:42
+#: Users/models.py:58
 msgid "user login"
 msgstr ""
 
-#: Users/models.py:47
+#: Users/models.py:63
 msgid "First Name User"
 msgstr ""
 
-#: Users/models.py:51
+#: Users/models.py:67
 msgid "Last Name User"
 msgstr ""
 
-#: Users/models.py:55
+#: Users/models.py:71
 msgid "Middle Name User"
 msgstr ""
 
-#: Users/models.py:59
+#: Users/models.py:75
 msgid "Phone Number"
 msgstr ""
 
-#: Users/models.py:64
+#: Users/models.py:81
 msgid "email address"
 msgstr ""
 
-#: Users/models.py:69
+#: Users/models.py:86
 msgid "Address"
 msgstr ""
 
-#: Users/models.py:74
+#: Users/models.py:91
 msgid "User BirthDay"
 msgstr ""
 
-#: Users/models.py:79
+#: Users/models.py:96
 msgid "Registration Data"
 msgstr ""
 
-#: Users/models.py:83
+#: Users/models.py:100
 msgid "Photo"
+msgstr ""
+
+#: Users/models.py:164
+msgid "User"
+msgstr ""
+
+#: Users/models.py:165
+msgid "Users"
 msgstr ""
