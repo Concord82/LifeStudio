@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 22:19+0700\n"
+"POT-Creation-Date: 2020-01-09 13:49+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: HomeService/admin.py:17
+msgid "Personal info"
+msgstr "Персональная"
+
+#: HomeService/admin.py:23
+msgid "Other info"
+msgstr "Прочие данные"
 
 #: HomeService/models.py:21
 #, python-format
@@ -55,7 +63,7 @@ msgstr ""
 "Задайте код виджета с сайта 2GIS для отображения карты места расположения "
 "офиса"
 
-#: HomeService/models.py:45
+#: HomeService/models.py:45 HomeService/models.py:146 HomeService/models.py:192
 msgid "Phone Number"
 msgstr "Номер телефона"
 
@@ -83,18 +91,104 @@ msgstr "Офис"
 msgid "Ofices"
 msgstr "Офисы"
 
-#: HomeService/models.py:79
+#: HomeService/models.py:80
 msgid "Name Work Type"
 msgstr "Имя типа работ"
 
-#: HomeService/models.py:83
+#: HomeService/models.py:84
 msgid "Description for work type"
 msgstr "Описание типов работ"
 
-#: HomeService/models.py:91
+#: HomeService/models.py:92
 msgid "Work Type"
 msgstr "Тип работы"
 
-#: HomeService/models.py:92
+#: HomeService/models.py:93
 msgid "Works Type"
 msgstr "Типы работ"
+
+#: HomeService/models.py:103
+#, fuzzy
+#| msgid "Work Type"
+msgid "Work Name"
+msgstr "Тип работы"
+
+#: HomeService/models.py:110
+msgid "unit"
+msgstr "Ед.изм"
+
+#: HomeService/models.py:115
+msgid "Price"
+msgstr "Цена"
+
+#: HomeService/models.py:120
+msgid "master Percent"
+msgstr "Процент мастера"
+
+#: HomeService/models.py:123
+msgid "Admin Percent"
+msgstr "Процент приемщика"
+
+#: HomeService/models.py:129
+#, fuzzy
+#| msgid "Work Type"
+msgid "Work"
+msgstr "Тип работы"
+
+#: HomeService/models.py:130
+#, fuzzy
+#| msgid "Works Type"
+msgid "Works List"
+msgstr "Типы работ"
+
+#: HomeService/models.py:134
+msgid "Last Name User"
+msgstr "Фамилия"
+
+#: HomeService/models.py:138
+msgid "First Name User"
+msgstr "Имя"
+
+#: HomeService/models.py:142
+msgid "Middle Name User"
+msgstr "Отчество"
+
+#: HomeService/models.py:152
+msgid "email address"
+msgstr "Электронная почта"
+
+#: HomeService/models.py:158
+msgid "Address"
+msgstr "Домашний адрес"
+
+#: HomeService/models.py:163
+msgid "User BirthDay"
+msgstr "День рождения"
+
+#: HomeService/models.py:168
+msgid "Registration Data"
+msgstr "Дата регистрации"
+
+#: HomeService/models.py:172
+msgid "Last Action Data"
+msgstr "Последняя активность"
+
+#: HomeService/models.py:177
+msgid "Comment"
+msgstr "Коментарий"
+
+#: HomeService/models.py:183
+msgid "Full Name User"
+msgstr "Фамилия Имя Отчество"
+
+#: HomeService/models.py:187
+msgid "Short Name User"
+msgstr "Фамилия И.О."
+
+#: HomeService/models.py:198
+msgid "Client"
+msgstr "Клиент"
+
+#: HomeService/models.py:199
+msgid "Clients"
+msgstr "Клиенты"

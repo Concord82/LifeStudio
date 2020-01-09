@@ -52,8 +52,6 @@ class MyUserManager(BaseUserManager):
 
 
 class MyUser(AbstractBaseUser):
-
-
     login_name = models.CharField(
         verbose_name=_('user login'),
         max_length=32,

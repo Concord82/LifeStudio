@@ -10,6 +10,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
 }
 
 .footer {
@@ -22,6 +25,9 @@ body {
 }
 
 body > .container {
+  padding: 60px 15px 0;
+}
+main > .container{
   padding: 60px 15px 0;
 }
 
