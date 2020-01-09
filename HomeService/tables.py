@@ -16,7 +16,6 @@ class PersonTable(tables.Table):
         return format_html('<a href="/work/clients/{}">{}</a>  ', record.id, record.get_full_name())
 
     def render_comment(self, value, record):
-        print (record.id)
         if record.comment_preview() != record.comment:
             return format_html('<span id="text-tooltip" rel="tooltip" title="{}"> {} ... </span>', value, record.comment_preview())
         else:

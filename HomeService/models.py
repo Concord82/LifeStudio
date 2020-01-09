@@ -216,23 +216,6 @@ class Clients(models.Model):
         self.middle_name = self.middle_name.capitalize()
         super(Clients, self).save(*args, **kwargs)
 
-        '''    else:
-                raise ValueError(_('Phone number should start 7 or 8'))
-        elif len(self.phone) == 12:
-            if self.phone[0:2] != '+7':
-                raise ValueError(_('Phone number should start +7 or +8'))
-        else:
-            raise ValueError(_('Phone number format is not valid'))
-
-        if not Clients.objects.filter(phone=self.phone).exists():
-            
-        else:
-            raise ValidationError('454564564') '''
-
-
-
-
-
     def __str__(self):
         return self.get_short_name()
 
